@@ -11,8 +11,7 @@ function getCountries(callback) {
 
   callback(data);
 }
-
-function getStates(country, callback) {
+ 
   console.log("S");
   const data = [
     {
