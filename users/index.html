@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+  </head>
+  <body>
+    <h1>Users</h1>
+
+    <ul id="users"></ul>
+
+    <h2 id="loader">Loading...</h2>
+
+    <div>
+      <form id="form">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div>
+          <label for="job">Job:</label>
+          <select id="job" name="job">
+            <option value="">Select Job</option>
+
+            <option value="engineer">Engineer</option>
+            <option value="doctor">Doctor</option>
+            <option value="lawyer">Lawyer</option>
+          </select>
+        </div>
+
+        <button>Submit</button>
+      </form>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="./form.js"></script>
+  </body>
+</html>
