@@ -11,8 +11,23 @@ function handleForm() {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    console.log(values);
+    sendData(values);
   });
 }
 
 handleForm();
+
+async function sendData(userData) {
+  const url = "https://reqres.in/api/users";
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(userData),
+    });
+    const data = await res.json();
+
+    console.log(data);
+  } catch (e) {
+    console.log(e);
+  }
+}
