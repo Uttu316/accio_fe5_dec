@@ -12,113 +12,23 @@
     <section class="products_wrapper">
       <div class="products_title">Products</div>
 
-      <div id="products_container">
-        <div class="product_card">
-          <div class="product_image_box">
-            <img
-              src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-              alt="1"
-            />
-          </div>
-
-          <div class="product_content">
-            <p class="product_title">Product 1</p>
-            <p class="product_brand">Reebok</p>
-            <p class="product_price">Price: 131$</p>
-            <p class="product_rating">⭐⭐⭐</p>
-          </div>
-        </div>
-        <div class="product_card">
-          <div class="product_image_box">
-            <img
-              src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-              alt="1"
-            />
-          </div>
-
-          <div class="product_content">
-            <p class="product_title">Product 1</p>
-            <p class="product_brand">Reebok</p>
-            <p class="product_price">Price: 131$</p>
-            <p class="product_rating">⭐⭐⭐</p>
-          </div>
-        </div>
-        <div class="product_card">
-          <div class="product_image_box">
-            <img
-              src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-              alt="1"
-            />
-          </div>
-
-          <div class="product_content">
-            <p class="product_title">Product 1</p>
-            <p class="product_brand">Reebok</p>
-            <p class="product_price">Price: 131$</p>
-            <p class="product_rating">⭐⭐⭐</p>
-          </div>
-        </div>
-        <div class="product_card">
-          <div class="product_image_box">
-            <img
-              src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-              alt="1"
-            />
-          </div>
-
-          <div class="product_content">
-            <p class="product_title">Product 1</p>
-            <p class="product_brand">Reebok</p>
-            <p class="product_price">Price: 131$</p>
-            <p class="product_rating">⭐⭐⭐</p>
-          </div>
-        </div>
-        <div class="product_card">
-          <div class="product_image_box">
-            <img
-              src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-              alt="1"
-            />
-          </div>
-
-          <div class="product_content">
-            <p class="product_title">Product 1</p>
-            <p class="product_brand">Reebok</p>
-            <p class="product_price">Price: 131$</p>
-            <p class="product_rating">⭐⭐⭐</p>
-          </div>
-        </div>
-        <div class="product_card">
-          <div class="product_image_box">
-            <img
-              src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-              alt="1"
-            />
-          </div>
-
-          <div class="product_content">
-            <p class="product_title">Product 1</p>
-            <p class="product_brand">Reebok</p>
-            <p class="product_price">Price: 131$</p>
-            <p class="product_rating">⭐⭐⭐</p>
-          </div>
-        </div>
-        <div class="product_card">
-          <div class="product_image_box">
-            <img
-              src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-              alt="1"
-            />
-          </div>
-
-          <div class="product_content">
-            <p class="product_title">Product 1</p>
-            <p class="product_brand">Reebok</p>
-            <p class="product_price">Price: 131$</p>
-            <p class="product_rating">⭐⭐⭐</p>
-          </div>
-        </div>
+      <div class="products_filter">
+        <span class="products_filter_label">Choose Rating:</span>
+        <select id="products_filter">
+          <option value="all">All</option>
+          <option value="3">3 star</option>
+          <option value="4">4 star</option>
+          <option value="5">5 star</option>
+        </select>
       </div>
+
+      <div id="products_container"></div>
     </section>
+
+    <script src="
+    https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
+    "></script>
+
+    <script src="./scripts/products.js"></script>
   </body>
 </html>
