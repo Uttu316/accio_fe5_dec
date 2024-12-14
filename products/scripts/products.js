@@ -1,9 +1,8 @@
 const api = async ({ path, method = "GET" }) => {
+  const baseURL = "https://fakestoreapi.com";
+
+  const url = baseURL + path;
   try {
-    const baseURL = "https://fakestoreapi.com";
-
-    const url = baseURL + path;
-
     const res = await fetch(url, {
       method,
     });
@@ -63,7 +62,8 @@ const createProduct = (product) => {
         </div>`);
 
   card.on("click", function (e) {
-    alert(id);
+    const path = location.href;
+    location.href = path.replace("index", "product") + `?id=${id}`;
   });
 
   return card;
