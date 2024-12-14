@@ -1,22 +1,4 @@
-const api = async ({ path, method = "GET" }) => {
-  const baseURL = "https://fakestoreapi.com";
-
-  const url = baseURL + path;
-  try {
-    const res = await fetch(url, {
-      method,
-    });
-    if (res.status >= 200 && res.status < 400) {
-      const data = await res.json();
-
-      return data;
-    }
-    throw new Error(res.statusText);
-  } catch (e) {
-    console.log("ERROR in ", url, e);
-    throw e;
-  }
-};
+import { api } from "./common.js";
 
 const getProuct = async () => {
   try {
@@ -57,6 +39,8 @@ const showProdcut = (product) => {
   const { title, price, description, rating, category, image } = product;
   let { rate, count } = rating;
   rate = Math.ceil(rate);
+
+  document.title = `Quickerce | ${title}`;
 
   imageEl.attr("src", image);
   imageEl.attr("alt", title);

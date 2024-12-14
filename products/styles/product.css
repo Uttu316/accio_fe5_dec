@@ -1,0 +1,111 @@
+.product_header {
+  box-shadow: 4px 0px 4px #ccc;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+.header_logo {
+  color: #faaca8;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header_actions {
+  display: flex;
+  align-items: center;
+}
+
+.header_action {
+  cursor: pointer;
+  padding: 4px 8px;
+  color: green;
+  position: relative;
+}
+.cart_count {
+  position: absolute;
+  top: 0;
+  font-size: 8px;
+  background-color: green;
+  color: white;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  right: -4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product_section {
+  display: flex;
+  max-width: 1440px;
+  gap: 40px;
+  margin: 40px;
+}
+
+.product_content {
+  flex: 1;
+}
+.product_image {
+  flex: 1;
+  max-height: 500px;
+}
+#product_img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+#product_title{
+    font-size: 30px;
+    font-weight: bold;
+}
+#product_category{
+    color: gray;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+#product_description{
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#product_price{
+    color: green;
+    margin-top: 20px;
+    font-weight: bold;
+}
+#product_rating{
+    margin-top: 10px;
+    color: teal;
+}
+
+.product_actions{
+    margin-top: 40px;
+}
+
+#add_to_cart{
+    padding: 8px 16px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: salmon;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 4px 4px 4px #faaca8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+#add_to_cart:hover{
+    background-color:rgb(230, 105, 91) ;
+}
+
+#add_to_cart:active{
+    transform: scale(0.9);
+    box-shadow: 2px 2px 2px #faaca8;
+    font-size: 16px;
+}
