@@ -1,0 +1,25 @@
+
+
+
+
+.container{
+    border: 2px solid green;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 500px;
+    margin: 40px auto;
+    flex-direction: column;
+  }
+  .title{
+    font-size: 32px;
+    color: brown;
+  }
+  
+  .list{
+    border: 1px solid gray;
+    margin-top: 20px;
+    padding: 40px;
+    border-radius: 8px;
+  }
