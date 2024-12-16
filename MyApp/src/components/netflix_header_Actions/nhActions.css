@@ -1,0 +1,25 @@
+
+
+
+.header_actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .header_select{
+      color: white;
+      border-radius: 12px;
+      padding: 4px 10px;
+      background-color: black;
+  }
+  
+  .header_btn{
+      padding: 8px 16px;
+      color: black;
+      background-color: white;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+  }
+  

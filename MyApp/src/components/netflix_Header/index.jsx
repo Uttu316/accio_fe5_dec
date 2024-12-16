@@ -1,16 +1,12 @@
+import NHActions from "../netflix_header_Actions";
 import "./header.css";
 
-const NHeader = () => {
+const NHeader = (props) => {
+  const { title } = props;
   return (
     <header className="header">
-      <h1 className="header_title">Netflix</h1>
-      <div className="header_actions">
-        <select className="header_select">
-          <option>English</option>
-          <option>हिन्दी</option>
-        </select>
-        <button className="header_btn">Signin</button>
-      </div>
+      <h1 className="header_title">{title}</h1>
+      <NHActions />
     </header>
   );
 };
