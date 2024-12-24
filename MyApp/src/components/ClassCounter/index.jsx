@@ -1,4 +1,5 @@
 import React from "react";
+import ClassLifeClycle from "../ClassLifeCycle";
 
 class ClassCounter extends React.Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class ClassCounter extends React.Component {
         <button onClick={this.onAdd}>Add </button>
         {count}
         <button onClick={this.onMinus}>Minus</button>
+        {count > 2 && count < 7 && <ClassLifeClycle />}
       </div>
     );
   }
