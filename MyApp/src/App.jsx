@@ -12,7 +12,7 @@ const App = () => {
     <div>
       <NHeader title="Netflix" />
       <NBanner />
-      <ClassCounter />
+      <ClassCounter start={5} max={10} min={1} />
       <FAQs />
       <NForm />
     </div>

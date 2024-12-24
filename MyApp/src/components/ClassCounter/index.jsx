@@ -1,10 +1,10 @@
 import React from "react";
 
 class ClassCounter extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      count: 0,
+      count: props.start,
     };
 
     this.onAdd = this.onAdd.bind(this);
@@ -12,22 +12,33 @@ class ClassCounter extends React.Component {
   }
 
   onAdd() {
-    const n = this.state.count + 1;
+    let c = this.state.count;
+    if (this.props.max > c) {
+      const n = c + 1;
 
-    this.setState({ count: n });
+      this.setState({ count: n });
+    }
   }
 
   onMinus() {
-    const n = this.state.count - 1;
+    let c = this.state.count;
+    if (this.props.min < c) {
+      const n = c - 1;
 
-    this.setState({ count: n });
+      this.setState({ count: n });
+    }
   }
   render() {
     const { count } = this.state;
+    const { start, max, min } = this.props;
     return (
       <div>
         <h1>Counter</h1>
-
+        <p>
+          Start:{start}
+          Min:{min}
+          Max:{max}
+        </p>
         <button onClick={this.onAdd}>Add </button>
         {count}
         <button onClick={this.onMinus}>Minus</button>
