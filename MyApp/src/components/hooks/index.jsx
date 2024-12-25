@@ -1,9 +1,17 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import TaskList from "./taskList";
 
 const Hooks = () => {
   const [list, setList] = useState([]);
   const [input, setInput] = useState("");
+  const [random, setRandom] = useState(0);
+
+  const conditions = useMemo(() => {
+    return {
+      disable: input.length <= 5,
+      showList: list.length > 0,
+    };
+  }, [input.length, list.length]);
 
   const onInput = (e) => {
     setInput(e.target.value);
@@ -20,10 +28,17 @@ const Hooks = () => {
     }
   };
 
-  const onDel = (id) => {
-    const remainings = list.filter((i) => i.id !== id);
+  const onDel = useCallback(
+    (id) => {
+      const remainings = list.filter((i) => i.id !== id);
 
-    setList(remainings);
+      setList(remainings);
+    },
+    [list]
+  );
+
+  const generate = () => {
+    setRandom(parseInt(Math.random() * 100));
   };
 
   useEffect(() => {
@@ -33,7 +48,8 @@ const Hooks = () => {
   console.log("Parent Render");
   return (
     <div>
-      <h1>Hooks</h1>
+      <h1>Hooks {random}</h1>
+      <button onClick={generate}> Generate Random</button>
       <div>
         <input
           name="task"
@@ -41,12 +57,14 @@ const Hooks = () => {
           onChange={onInput}
           placeholder="Enter Task"
         />
-        <button disabled={input.length <= 5} onClick={onAdd}>
+        <button disabled={conditions.disable} onClick={onAdd}>
           Add Task
         </button>
       </div>
 
-      {list.length > 0 && <TaskList list={list} onDel={onDel} />}
+      {conditions.showList && (
+        <TaskList conditions={conditions} list={list} onDel={onDel} />
+      )}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const TaskList = ({ list, onDel }) => {
+const TaskList = ({ conditions, list, onDel }) => {
   useEffect(() => {
     console.log("child Mounted");
 
@@ -9,6 +9,10 @@ const TaskList = ({ list, onDel }) => {
     };
   }, []);
   console.log("Child Render");
+
+  useEffect(() => {
+    console.log("condition change");
+  }, [conditions]);
   return (
     <ul>
       {list.map((i) => (
