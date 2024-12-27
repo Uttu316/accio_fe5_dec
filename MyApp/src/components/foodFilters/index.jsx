@@ -1,16 +1,22 @@
 import styles from "./styles.module.css";
-const FoodFilters = () => {
+const FoodFilters = ({ categories, areas }) => {
   return (
     <div className={styles.filterContainer}>
       <div className={styles.filters}>
         <label>Filter By:</label>
         <select name="area">
-          <option value={"India"}>India</option>
-          <option value={"British"}>British</option>
+          {categories.map((i) => (
+            <option key={i} value={i}>
+              {i}
+            </option>
+          ))}
         </select>
         <select name="category">
-          <option value={"Dessert"}>Dessert</option>
-          <option value={"Vegeterian"}>Vegeterian</option>
+          {areas.map((i) => (
+            <option key={i} value={i}>
+              {i}
+            </option>
+          ))}
         </select>
       </div>
       <div className={styles.searchContainer}>

@@ -30,4 +30,6 @@
     flex-wrap: wrap;
     margin: 40px;
     gap: 24px;
+    align-items: center;
+    justify-content: center;
 }

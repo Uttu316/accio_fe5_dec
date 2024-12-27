@@ -1,19 +1,14 @@
 import styles from "./styles.module.css";
-const FoodItem = () => {
+const FoodItem = ({ id, title, category, area, img }) => {
   return (
     <div className={styles.foodItem}>
       <div className={styles.img}>
-        <img
-          alt={"Title"}
-          src={
-            "https://www.themealdb.com/images/media/meals/wuxrtu1483564410.jpg"
-          }
-        />
+        <img alt={title} src={img} />
       </div>
       <div className={styles.content}>
-        <p className={styles.foodTitle}>Title 1</p>
-        <p className={styles.foodCategory}>Food Category</p>
-        <p className={styles.foodArea}>India</p>
+        <p className={styles.foodTitle}>{title}</p>
+        <p className={styles.foodCategory}>{category}</p>
+        <p className={styles.foodArea}>{area}</p>
       </div>
     </div>
   );
