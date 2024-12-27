@@ -1,0 +1,33 @@
+
+.restaurantPage{
+    min-height: 100vh;
+    max-width: 1440px;
+    background-color: rgb(255, 250, 250);
+}
+
+.foodContainer{
+    padding: 40px;
+}
+
+.foodContainerHeading{
+    text-align: center;
+    font-size: 24px;
+    color: gray;
+}
+
+.foodContainerHeading::after{
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 5px;
+    background-color: salmon;
+}
+
+.foodItems{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px;
+    gap: 24px;
+}
