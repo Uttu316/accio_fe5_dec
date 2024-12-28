@@ -1,7 +1,13 @@
+import { useNavigate } from "react-router";
 import styles from "./styles.module.css";
+
 const FoodItem = ({ id, title, category, area, img }) => {
+  const navigate = useNavigate();
+  const onClick = () => {
+    navigate(`/meal/${id}`);
+  };
   return (
-    <div className={styles.foodItem}>
+    <div onClick={onClick} className={styles.foodItem}>
       <div className={styles.img}>
         <img alt={title} src={img} />
       </div>

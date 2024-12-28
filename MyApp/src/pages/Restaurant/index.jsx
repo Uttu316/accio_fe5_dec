@@ -5,30 +5,14 @@ import FoodFilters from "../../components/foodFilters";
 import FoodItem from "../../components/FoodItem";
 import { useEffect, useMemo, useState } from "react";
 import { api } from "../../services";
+import useAPIStatus from "../../hooks/useAPIStatus";
 
 const Restaurant = () => {
   const [data, setData] = useState([]);
 
   const [filteredData, setFilterData] = useState([]);
-
-  const [status, setStatus] = useState("loading");
-
-  const isLoading = status === "loading";
-  const isError = status === "error";
-  const isDone = status === "done";
-
-  const [categories, areas] = useMemo(() => {
-    let c = [];
-    let a = [];
-
-    data.forEach((i) => {
-      c.push(i.strCategory);
-      a.push(i.strArea);
-    });
-    c = Array.from(new Set(c));
-    a = Array.from(new Set(a));
-    return [c, a];
-  }, [data]);
+  const { isDone, isError, isLoading, setStatus } = useAPIStatus();
+  const isEmpty = isDone && filteredData.length === 0;
 
   const getData = async () => {
     setStatus("loading");
@@ -64,19 +48,22 @@ const Restaurant = () => {
         <div className={styles.foodContainer}>
           <h3 className={styles.foodContainerHeading}>Menu Items</h3>
 
-          <FoodFilters categories={categories} areas={areas} />
+          <FoodFilters data={data} setFilterData={setFilterData} />
 
           <div className={styles.foodItems}>
             {filteredData.map((item) => (
               <FoodItem
                 key={item.id}
-                id={item.idMeal}
+                id={item.id}
                 title={item.strMeal}
                 img={item.strMealThumb}
                 category={item.strCategory}
                 area={item.strArea}
               />
             ))}
+            {isLoading && <h2>Loading...</h2>}
+            {isEmpty && <h2>No Meal Available</h2>}
+            {isError && <h2>Something Went Wrong</h2>}
           </div>
         </div>
       </main>
