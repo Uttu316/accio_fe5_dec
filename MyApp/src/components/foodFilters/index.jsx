@@ -1,7 +1,10 @@
-import { useMemo, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import FoodSelect from "./foodSelectFilter";
 import styles from "./styles.module.css";
-const FoodFilters = ({ data, setFilterData }) => {
+import { RestaurantContext } from "../../providers/Restaurant.Provider";
+const FoodFilters = ({ setFilterData }) => {
+  const { data } = useContext(RestaurantContext);
+
   const [filters, setFilter] = useState({
     area: "All",
     category: "All",

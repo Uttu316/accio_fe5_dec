@@ -4,6 +4,7 @@ import { api } from "../../services";
 import { useEffect, useState } from "react";
 import FoodHeader from "../../components/foodHeader";
 import "./style.css";
+import PageWrapper from "../../components/PageWrapper";
 const FoodDetail = () => {
   const { mealId } = useParams();
   const { isDone, isError, isLoading, setStatus } = useAPIStatus();
@@ -35,8 +36,7 @@ const FoodDetail = () => {
   };
 
   return (
-    <div>
-      <FoodHeader />
+    <PageWrapper>
       {isDone && (
         <section className="product_section">
           <div className="product_image">
@@ -70,7 +70,7 @@ const FoodDetail = () => {
           </Link>
         </div>
       )}
-    </div>
+    </PageWrapper>
   );
 };
 

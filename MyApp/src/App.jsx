@@ -9,20 +9,31 @@ import Profile from "./pages/ProfilePage";
 import NotFound from "./pages/NotFoundPage";
 import Restaurant from "./pages/Restaurant";
 import FoodDetail from "./pages/FoodDetail";
+import PrivatePage from "./Auth";
+import ErrorBoundary from "./ErroBoundary";
 // const FoodDetail = React.lazy(() => import("./pages/FoodDetail"));
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/restaurant" element={<Restaurant />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/meal/:mealId" element={<FoodDetail />} />
-      </Routes>
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/restaurant" element={<Restaurant />} />
+          <Route path="*" element={<NotFound />} />
+          <Route
+            path="/meal/:mealId"
+            element={
+              <PrivatePage>
+                <FoodDetail />
+              </PrivatePage>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </ErrorBoundary>
   );
 };
 
